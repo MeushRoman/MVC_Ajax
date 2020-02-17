@@ -30,7 +30,7 @@ namespace MVC_Ajax.Controllers
        
         public ActionResult BookSearch(string name)
         {
-
+            
             var allbooks = db.Where(z => z.Author.Contains(name)).ToList();
             if (allbooks.Count <= 0)
             {
