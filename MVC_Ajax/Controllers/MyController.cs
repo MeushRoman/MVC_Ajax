@@ -38,5 +38,12 @@ namespace MVC_Ajax.Controllers
             }
             return PartialView(allbooks);
         }
+
+        public JsonResult JsonSearch(string name)
+        {
+            var jsondata = db.Where(a => a.Author.Contains(name)).ToList<Books>();
+            return Json(jsondata, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
